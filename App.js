@@ -4,9 +4,15 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 import Total from './components/Total';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import ChatListScreen from './screens/ChatListScreen';
+import ChatSettingsScreen from './screens/ChatSettingsScreen';
+
 
 
 SplashScreen.preventAutoHideAsync();
+const Stack = createStackNavigator();
 
 export default function App() {
 
@@ -29,11 +35,9 @@ export default function App() {
     };
 
     prepare();
-    
     // load font 
-    
 
-  },[]);
+  },[SplashScreen.hideAsync()]);
 
   const onLayout = useCallback(async()=>{
     if(appIsLoaded){
@@ -58,14 +62,13 @@ export default function App() {
   }, [sandwich]);
    
   return (
-    <SafeAreaProvider style={styles.container} onLayout={onLayout}>
-      <SafeAreaView>
-          <Text style={styles.text}>{"les sandwich: "+ sandwich}</Text>
-          <Button title='Ajoute' onPress={addSan}/>
-          <Text style={styles.text}>{"les waters: "+ water}</Text>
-          <Button title='Ajoute' onPress={addWat}/>
-          <Total  getTotal={getTotal} /> 
-      </SafeAreaView>
+    <SafeAreaProvider style={styles.container}>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name='Home' component={ChatListScreen} />
+          <Stack.Screen name='Settings' component={ChatSettingsScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </SafeAreaProvider>
   );
 }
@@ -74,8 +77,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    justifyContent: 'center',
-    alignItems: 'center'
   },
   text:{
     fontSize: 25,
