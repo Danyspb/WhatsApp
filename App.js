@@ -6,13 +6,28 @@ import * as Font from 'expo-font';
 import Total from './components/Total';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import ChatListScreen from './screens/ChatListScreen';
 import ChatSettingsScreen from './screens/ChatSettingsScreen';
+import SettingsScreen from './screens/SettingsScreen';
+
+
 
 
 
 SplashScreen.preventAutoHideAsync();
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+
+
+const TabNavigator = ()=>{
+  return(
+    <Tab.Navigator>
+      <Tab.Screen name='Chatlist' component={ChatListScreen} />
+      <Tab.Screen name='Settings' component={SettingsScreen} />
+    </Tab.Navigator>
+  )
+}
 
 export default function App() {
 
@@ -65,12 +80,10 @@ export default function App() {
     <SafeAreaProvider style={styles.container}>
       <NavigationContainer>
         <Stack.Navigator>
-          <Stack.Screen name='Home' component={ChatListScreen} />
+          <Stack.Screen name='Home' component={TabNavigator} />
           <Stack.Screen name='Settings' component={ChatSettingsScreen} options={
             {headerTitle: "Settings",
              gestureEnabled: true,
-             headerBackTitle: "Back",
-
             }
             } />
         </Stack.Navigator>
