@@ -4,41 +4,15 @@ import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 import * as SplashScreen from 'expo-splash-screen';
 import * as Font from 'expo-font';
 import Total from './components/Total';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import AppNavigator from './navigation/AppNavigator';
 
-import ChatListScreen from './screens/ChatListScreen';
-import ChatSettingsScreen from './screens/ChatSettingsScreen';
-import SettingsScreen from './screens/SettingsScreen';
-import { Ionicons } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
 
 
 
 
 
 SplashScreen.preventAutoHideAsync();
-const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
 
-
-const TabNavigator = ()=>{
-  return(
-    <Tab.Navigator screenOptions={{headerTitle: ''}}>
-      <Tab.Screen name='Chat' component={ChatListScreen} options={{
-        tabBarLabel: "Chats",
-        tabBarIcon : ()=> (<Ionicons name="chatbox" size={24} color="#2A3990"  />)
-        
-        }}/>
-      <Tab.Screen name='Settings' component={SettingsScreen} options={{
-        tabBarLabel: "Settings",
-        tabBarIcon : ()=> (<Ionicons name="settings" size={24} color="#2A3990" />)
-       
-        }} />
-    </Tab.Navigator>
-  )
-}
 
 export default function App() {
 
@@ -89,15 +63,9 @@ export default function App() {
    
   return (
     <SafeAreaProvider style={styles.container}>
-      <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen name='Home' component={TabNavigator}  options={{headerShown: false}}/>
-          <Stack.Screen name='chatScreenSettings' component={ChatSettingsScreen} options={{
-            headerTitle: "Settings",
-            headerBackTitle: "Back"
-          }} />
-        </Stack.Navigator>
-      </NavigationContainer>
+
+      <AppNavigator />
+      
     </SafeAreaProvider>
   );
 }
