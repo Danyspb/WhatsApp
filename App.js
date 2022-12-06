@@ -1,3 +1,4 @@
+import React from 'react';
 import { useState, useEffect, useCallback } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
@@ -65,7 +66,7 @@ export default function App() {
     <SafeAreaProvider style={styles.container}>
 
       <AppNavigator />
-      
+
     </SafeAreaProvider>
   );
 }
