@@ -1,20 +1,23 @@
 import React from "react";
-import { Text, View, StyleSheet, Button } from "react-native";
-
-
+import { Text, View, StyleSheet, Button, ImageBackground } from "react-native";
+import backgroundImage from "../assets/images/WallpaperDog-5554827.jpg"
 
 const ChatScreen = (props) =>{
     return (
         <View style={styles.container}>
-            <Text>Chat screen ok </Text>
+            <ImageBackground source={backgroundImage} style={styles.backgroundImage}>
+
+            </ImageBackground>
         </View>
     )
 }
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        flexDirection: 'column',
+    },
+    backgroundImage:{
+        flex: 1
     }
 })
 
