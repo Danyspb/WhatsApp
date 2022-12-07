@@ -24,8 +24,8 @@ const ChatScreen = (props) =>{
                 <Ionicons name="camera" size={24} color="#5837D0" />
                 </TouchableOpacity>}
 
-                { message !== "" && <TouchableOpacity style={styles.button} onPress={()=> console.log("press")}>
-                <Feather name="send" size={24} color="#5837D0" />
+                { message !== "" && <TouchableOpacity style={{...styles.button, ...styles.sendButton}} onPress={()=> console.log("press")}>
+                <Feather name="send" size={20} color="#fff" />
                 </TouchableOpacity>}
 
                 
@@ -61,6 +61,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         width: 30
+    },
+    sendButton:{
+        backgroundColor: '#A460ED',
+        borderRadius: 45,
+        padding: 5,
+        width: 30
+        
     }
 })
 
