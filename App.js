@@ -8,10 +8,6 @@ import Total from './components/Total';
 import AppNavigator from './navigation/AppNavigator';
 
 
-
-
-
-
 SplashScreen.preventAutoHideAsync();
 
 
