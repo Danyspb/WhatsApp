@@ -11,13 +11,17 @@ const ChatScreen = (props) =>{
         <SafeAreaView style={styles.container} edges={['right','bottom','bottom']}>
             <ImageBackground source={require('../assets/images/WallpaperDog-5554827.jpg')} style={styles.backgroundImage} />
             <View style={styles.inputContainer}>
-                <TouchableOpacity onPress={()=> console.log("#0002A1")}>
-                <Feather name="plus" size={24} color="#3498db" />
+                <TouchableOpacity style={styles.button} onPress={()=> console.log("#0002A1")}>
+                <Feather name="plus" size={24} color="#5837D0" />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={()=> console.log("press")}>
-                <Ionicons name="camera" size={24} color="#0002A1" />
+                <TextInput style={styles.textbox}/>
+                <TouchableOpacity style={styles.button} onPress={()=> console.log("press")}>
+                <Ionicons name="camera" size={24} color="#5837D0" />
                 </TouchableOpacity>
-                <TextInput />
+                <TouchableOpacity style={styles.button} onPress={()=> console.log("press")}>
+                <Ionicons name="mic" size={24} color="#5837D0" />
+                </TouchableOpacity>
+                
             </View>
         </SafeAreaView>
       
@@ -37,6 +41,19 @@ const styles = StyleSheet.create({
         paddingVertical: 8,
         paddingHorizontal: 10,
         height: 50,
+    },
+    textbox:{
+        flex: 1,
+        borderWidth: 1,
+        borderRadius: 50,
+        borderColor: '#E8C4C4',
+        marginHorizontal: 10,
+        paddingHorizontal: 12
+    },
+    button:{
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: 30
     }
 })
 
