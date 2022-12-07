@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Text, View, StyleSheet, Button, ImageBackground, TextInput, TouchableOpacity } from "react-native";
 import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import { Feather } from '@expo/vector-icons';
@@ -6,6 +6,10 @@ import { Ionicons } from '@expo/vector-icons';
 
 
 const ChatScreen = (props) =>{
+
+    const [message,setMesage] = useState('');
+    console.log(message);
+
     return (
         
         <SafeAreaView style={styles.container} edges={['right','bottom','bottom']}>
@@ -14,13 +18,16 @@ const ChatScreen = (props) =>{
                 <TouchableOpacity style={styles.button} onPress={()=> console.log("#0002A1")}>
                 <Feather name="plus" size={24} color="#5837D0" />
                 </TouchableOpacity>
-                <TextInput style={styles.textbox}/>
-                <TouchableOpacity style={styles.button} onPress={()=> console.log("press")}>
+                <TextInput style={styles.textbox} onChangeText={text=> setMesage(text)}/>
+
+                { message === "" && <TouchableOpacity style={styles.button} onPress={()=> console.log("press")}>
                 <Ionicons name="camera" size={24} color="#5837D0" />
-                </TouchableOpacity>
-                <TouchableOpacity style={styles.button} onPress={()=> console.log("press")}>
-                <Ionicons name="mic" size={24} color="#5837D0" />
-                </TouchableOpacity>
+                </TouchableOpacity>}
+
+                { message !== "" && <TouchableOpacity style={styles.button} onPress={()=> console.log("press")}>
+                <Feather name="send" size={24} color="#5837D0" />
+                </TouchableOpacity>}
+
                 
             </View>
         </SafeAreaView>
