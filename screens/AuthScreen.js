@@ -1,25 +1,25 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
+import PageContainer from "../components/PageContainer";
 
 
 
 const AuthScreen = (props)=>{
 
     return(
-        <View style={styles.container}>
-           <Text  >
-           login Screen
-           </Text>
-        </View>
+        <SafeAreaView style={{flex: 1}}>
+           <PageContainer style={{backgroundColor: 'blue'}}>
+                <Text>
+                    Hello motherfuck
+                </Text>
+           </PageContainer>
+        </SafeAreaView>
     )
 }
 
 const  styles = StyleSheet.create({
-    container:{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
+   
 })
 
 export default AuthScreen;
