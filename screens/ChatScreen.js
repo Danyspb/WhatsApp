@@ -8,6 +8,7 @@ import { Ionicons } from '@expo/vector-icons';
 const ChatScreen = (props) =>{
 
     const [message, setMesage] = useState('');
+     
 
    const sendMessage = useCallback(()=>{
     setMesage("");
