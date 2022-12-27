@@ -1,7 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import PageContainer from "../components/PageContainer";
+import Input from "../components/input";
 
 
 
@@ -9,10 +10,8 @@ const AuthScreen = (props)=>{
 
     return(
         <SafeAreaView style={{flex: 1}}>
-           <PageContainer style={{backgroundColor: 'blue'}}>
-                <Text>
-                    Hello motherfuck
-                </Text>
+           <PageContainer>
+                <Input label="first name"/>
            </PageContainer>
         </SafeAreaView>
     )
