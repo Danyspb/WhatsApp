@@ -12,7 +12,7 @@ const AuthScreen = (props)=>{
     return(
         <SafeAreaView style={{flex: 1}}>
            <PageContainer>
-                <Input label="First Name"/>
+                <Input label="First Name" icon="user-o"/>
            </PageContainer>
         </SafeAreaView>
     )

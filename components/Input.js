@@ -1,7 +1,7 @@
 import React from "react";
 import { Dimensions, StyleSheet, Text, TextInput, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
-
+import { FontAwesome } from '@expo/vector-icons';
 
 const Input = (props) =>{
     return (
@@ -10,7 +10,13 @@ const Input = (props) =>{
                 {props.label}
             </Text>
             <View style={styles.inputContainer}>
-                <TextInput />
+            
+                <FontAwesome 
+                name={props.icon} 
+                size={20}  
+                style={styles.icon}/>
+            
+                <TextInput/>
             </View>
         </View>
     )
@@ -26,6 +32,11 @@ const styles = StyleSheet.create({
         paddingVertical: 15,
         borderRadius: 2,
         backgroundColor: '#F4F8F7',
+        flexDirection: 'row'
+    },
+    icon:{
+        margin: 10,
+        color: '#7f8c8d',
 
     }
 })
