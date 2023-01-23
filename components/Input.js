@@ -16,7 +16,7 @@ const Input = (props) =>{
                 size={20}  
                 style={styles.icon}/>
             
-                <TextInput/>
+                <TextInput  style={styles.input}/>
 
             </View>
         </View>
@@ -45,6 +45,14 @@ const styles = StyleSheet.create({
         fontStyle: 'italic',
         letterSpacing: 0.3,
         color: '#1c1e21'
+
+    },
+    input:{
+         color: '#1c1e21',
+         flex: 1, 
+         fontFamily: 'regular',
+         letterSpacing: 0.3,
+         paddingTop: 0,
 
     }
 })
