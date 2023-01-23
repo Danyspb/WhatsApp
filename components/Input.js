@@ -6,7 +6,7 @@ import { FontAwesome } from '@expo/vector-icons';
 const Input = (props) =>{
     return (
         <View style={styles.container}>
-            <Text>
+            <Text style={styles.label}>
                 {props.label}
             </Text>
             <View style={styles.inputContainer}>
@@ -17,6 +17,7 @@ const Input = (props) =>{
                 style={styles.icon}/>
             
                 <TextInput/>
+
             </View>
         </View>
     )
@@ -37,6 +38,13 @@ const styles = StyleSheet.create({
     icon:{
         margin: 10,
         color: '#7f8c8d',
+
+    },
+    label:{
+        marginVertical: 8,
+        fontStyle: 'italic',
+        letterSpacing: 0.3,
+        color: '#1c1e21'
 
     }
 })
