@@ -4,6 +4,7 @@ import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import PageContainer from "../components/PageContainer";
 import Input from "../components/Input";
+import SubmitButton from "../components/SubmitButton";
 
 
 
@@ -20,9 +21,9 @@ const AuthScreen = (props)=>{
 
                 <Input label="Email" icon="mail" />
 
-                <Input label="Password" icon="lock" />
+                <Input label="Password" icon="lock" />  
 
-                
+                <SubmitButton />               
            </PageContainer>
         </SafeAreaView>
     )
