@@ -1,24 +1,40 @@
 import React from "react";
-import { Dimensions, StyleSheet, Text, TextInput, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { FontAwesome } from '@expo/vector-icons';
+import { StyleSheet, Text, TextInput, View } from "react-native";
+import { Feather } from '@expo/vector-icons';
+
+
 
 const Input = (props) =>{
+
+
+
+    
+    const Feat = () =>{
+        return(
+            
+            <Feather
+                name={props.icon} 
+                size={20}  
+                style={styles.icon}/>
+        )
+    }
     return (
         <View style={styles.container}>
             <Text style={styles.label}>
                 {props.label}
             </Text>
             <View style={styles.inputContainer}>
-            
-                <FontAwesome 
-                name={props.icon} 
-                size={20}  
-                style={styles.icon}/>
-            
-                <TextInput  style={styles.input}/>
 
+                <Feat />
+                <TextInput  style={styles.input}/>
             </View>
+            {
+              props.errorText &&
+                <View style={styles.errorContainer}>
+                    <Text style={styles.errorText}>{props.errorText}</Text>
+                </View>
+            }
+
         </View>
     )
 }
@@ -42,7 +58,7 @@ const styles = StyleSheet.create({
     },
     label:{
         marginVertical: 8,
-        fontStyle: 'italic',
+        fontWeight: 'bold',
         letterSpacing: 0.3,
         color: '#1c1e21'
 
@@ -53,7 +69,16 @@ const styles = StyleSheet.create({
          fontFamily: 'regular',
          letterSpacing: 0.3,
          paddingTop: 0,
-
+    },
+    errorContainer:{
+        marginVertical: 5
+    },
+    errorText:{
+        color: 'red',
+        fontSize: 13,
+        fontFamily: 'regular',
+        letterSpacing: 0.3,
+        fontStyle: 'italic'
     }
 })
-export default Input;
+export default Input; 
