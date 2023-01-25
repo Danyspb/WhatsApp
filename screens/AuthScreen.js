@@ -25,7 +25,9 @@ const AuthScreen = (props)=>{
 
                 <SubmitButton 
                     title="Sign up"
-                    
+                    onPress={()=>console.log('Button Press')}
+                    disabled={true}
+                    style={{marginTop: 20}}
                  />               
            </PageContainer>
         </SafeAreaView>
