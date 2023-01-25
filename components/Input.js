@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'red',
         paddingHorizontal: 10,
         paddingVertical: 15,
-        borderRadius: 2,
+        borderRadius: 15,
         backgroundColor: '#F4F8F7',
         flexDirection: 'row'
     },
