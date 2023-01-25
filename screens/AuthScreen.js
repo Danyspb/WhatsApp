@@ -23,7 +23,10 @@ const AuthScreen = (props)=>{
 
                 <Input label="Password" icon="lock" />  
 
-                <SubmitButton  />               
+                <SubmitButton 
+                    title="Sign up"
+                    
+                 />               
            </PageContainer>
         </SafeAreaView>
     )

@@ -60,8 +60,7 @@ const styles = StyleSheet.create({
         marginVertical: 8,
         fontWeight: 'bold',
         letterSpacing: 0.3,
-        color: '#1c1e21'
-
+        color: '#1c1e21',
     },
     input:{
          color: '#1c1e21',

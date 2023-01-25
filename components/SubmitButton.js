@@ -14,14 +14,14 @@ const SubmitButton  = props =>{
     return(
 
         <TouchableOpacity style={{...styles.button, ...{backgroundColor: bgColor }}}>
-            <Text style={{color: props.disabled ? colors.grey: 'white'}} >Click Me</Text>
+            <Text style={{color: props.disabled ? colors.grey: 'white'}} >{props.title}</Text>
         </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
+
     button:{
-       
         paddingHorizontal: 30,
         paddingVertical: 10,
         borderRadius: 30,
