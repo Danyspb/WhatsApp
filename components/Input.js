@@ -6,8 +6,6 @@ import { Feather } from '@expo/vector-icons';
 
 const Input = (props) =>{
 
-
-
     
     const Feat = () =>{
         return(
