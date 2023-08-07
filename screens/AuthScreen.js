@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import PageContainer from "../components/PageContainer";
 import SigneUpForm from "../components/SignUpForm";
 import SignInForm from "../components/SignInForm";
 import colors from "../constants/colors";
-
-
-
-
+import logo from '../assets/images/whatsap.png'
 
 const AuthScreen = (props)=>{
 
@@ -18,6 +15,9 @@ const AuthScreen = (props)=>{
     return(
         <SafeAreaView style={{flex: 1}}>
            <PageContainer>
+            <View style={styles.logoContainer}>
+                <Image  source={logo} style={styles.logoStyle} resizeMode="contain" />
+            </View>
                {
                 isSignUp ?
                 <SigneUpForm /> : 
@@ -48,6 +48,14 @@ const  styles = StyleSheet.create({
         color: colors.blue,
         fontFamily: 'lobster'
 
+       },
+       logoContainer:{
+        justifyContent: 'center',
+        alignItems: 'center',
+       },
+       logoStyle:{
+        width: 110,
+        height: 110
        }
 })
 

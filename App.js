@@ -50,9 +50,7 @@ export default function App() {
    
   return (
     <SafeAreaProvider style={styles.container} onLayout={onLayoutRootView}>
-
       <AppNavigator />
-
     </SafeAreaProvider>
   );
 }
