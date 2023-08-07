@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import PageContainer from "../components/PageContainer";
 import SigneUpForm from "../components/SignUpForm";
@@ -15,24 +15,31 @@ const AuthScreen = (props)=>{
     return(
         <SafeAreaView style={{flex: 1}}>
            <PageContainer>
-            <View style={styles.logoContainer}>
-                <Image  source={logo} style={styles.logoStyle} resizeMode="contain" />
-            </View>
-               {
-                isSignUp ?
-                <SigneUpForm /> : 
-                <SignInForm /> 
-               }  
+            <KeyboardAvoidingView
+            keyboardVerticalOffset={100}
+            style={styles.keyboard}
+            >
+                <ScrollView >
+                    <View style={styles.logoContainer}>
+                        <Image  source={logo} style={styles.logoStyle} resizeMode="contain" />
+                    </View>
+                    {
+                        isSignUp ?
+                        <SigneUpForm /> : 
+                        <SignInForm /> 
+                    }  
 
-               <TouchableOpacity
-                onPress={()=> setIsSignUP(prevState => !prevState)}
-                style={styles.linkContainer}
-                >
+                    <TouchableOpacity
+                        onPress={()=> setIsSignUP(prevState => !prevState)}
+                        style={styles.linkContainer}
+                        >
 
-                    <Text style={styles.link}>
-                        {`Swith to ${isSignUp ? "Singn In" : "Sign Up"}`}
-                    </Text>
-               </TouchableOpacity>     
+                            <Text style={styles.link}>
+                                {`Swith to ${isSignUp ? "Singn In" : "Sign Up"}`}
+                            </Text>
+                    </TouchableOpacity>    
+                </ScrollView> 
+            </KeyboardAvoidingView>
            </PageContainer>
         </SafeAreaView>
     )
@@ -56,6 +63,10 @@ const  styles = StyleSheet.create({
        logoStyle:{
         width: 110,
         height: 110
+       },
+       keyboard:{
+        flex: 1,
+        justifyContent: 'center'
        }
 })
 
