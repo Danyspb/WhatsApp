@@ -17,7 +17,7 @@ const ChatScreen = (props) =>{
     return (
         
         <SafeAreaView style={styles.container} edges={['right','bottom','bottom']}>
-            <ImageBackground source={require('../assets/images/WallpaperDog-5554827.jpg')} style={styles.backgroundImage} />
+            <ImageBackground source={require('../assets/images/peakpx.jpg')} style={styles.backgroundImage} resizeMode="contain" />
             <View style={styles.inputContainer}>
                 <TouchableOpacity style={styles.button} onPress={()=> console.log("#0002A1")}>
                 <Feather name="plus" size={24} color="#5837D0" />

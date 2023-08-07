@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
     input:{
          color: '#1c1e21',
          flex: 1, 
-         fontFamily: 'regular',
-         letterSpacing: 0.3,
+         fontFamily: 'roboto',
+         letterSpacing: 1,
          paddingTop: 0,
     },
     errorContainer:{
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     errorText:{
         color: 'red',
         fontSize: 13,
-        fontFamily: 'regular',
+        fontFamily: 'dancing',
         letterSpacing: 0.3,
         fontStyle: 'italic'
     }
