@@ -6,10 +6,15 @@ import { Feather } from '@expo/vector-icons';
 
 const Input = (props) =>{
 
+
+
+    const onChangeText = text =>{
+        props.onInputChanged(props.id, text );
+
+    }
     
     const Feat = () =>{
         return(
-            
             <Feather
                 name={props.icon} 
                 size={20}  
@@ -24,7 +29,11 @@ const Input = (props) =>{
             <View style={styles.inputContainer}>
 
                 <Feat />
-                <TextInput  style={styles.input}/>
+                <TextInput 
+                    style={styles.input}
+                    onChangeText={onChangeText}
+                 
+                />
             </View>
             {
               props.errorText &&

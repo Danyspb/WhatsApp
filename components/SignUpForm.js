@@ -3,15 +3,39 @@ import Input from "../components/Input";
 import SubmitButton from "./SubmitButton";
 
 const SigneUpForm = (props) =>{
+
+    const inputChangeHandler = (inputId, inputValue) =>{
+
+        console.log('inputId: ' + inputId)
+        console.log('inputValue: ' + inputValue)
+
+    }
+
     return(
         <>
-            <Input label="First Name" icon="user"  />
+            <Input 
+                id='firstName'
+                label="First Name" 
+                icon="user"  
+                onInputChanged={inputChangeHandler}/>
 
-            <Input label="Last Name" icon="user" />
+            <Input 
+                id="lastName"
+                label="Last Name" 
+                icon="user" 
+                onInputChanged={inputChangeHandler}/>
 
-            <Input label="Email" icon="mail" />
+            <Input
+                id="email"
+                label="Email" 
+                icon="mail" 
+                onInputChanged={inputChangeHandler}/>
 
-            <Input label="Password" icon="lock" />  
+            <Input 
+                id="password"
+                label="Password" 
+                icon="lock" 
+                onInputChanged={inputChangeHandler}/>  
 
             <SubmitButton 
 
