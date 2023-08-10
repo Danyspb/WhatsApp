@@ -1,13 +1,20 @@
 import react from "react";
 import Input from "../components/Input";
 import SubmitButton from "./SubmitButton";
+import { validate } from "validate.js";
 
 const SigneUpForm = (props) =>{
 
     const inputChangeHandler = (inputId, inputValue) =>{
 
-        console.log('inputId: ' + inputId)
-        console.log('inputValue: ' + inputValue)
+        if(inputId === "firstName" || inputId === "lastName"){
+            validate({"firstName": inputValue}, {"firstName": {presence: {allowEmpty: false}}})
+        }else if(inputId === "email"){
+
+        }
+        else if(inputId === "password"){
+            
+        }
 
     }
 
