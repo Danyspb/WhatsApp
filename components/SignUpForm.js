@@ -8,12 +8,26 @@ const SigneUpForm = (props) =>{
     const inputChangeHandler = (inputId, inputValue) =>{
 
         if(inputId === "firstName" || inputId === "lastName"){
-            validate({"firstName": inputValue}, {"firstName": {presence: {allowEmpty: false}}})
+
+            const constraints = {
+                presence: {allowEmpty: false},
+            }
+            if(inputValue !==""){
+                constraints.format = {
+                    pattern: '[a-z]+',
+                    flags: 'i',
+                    message : 'ce champs ne peut contenir que des lettres'
+                }
+            }
+
+           console.log (validate({[inputId]: inputValue}, {[inputId]: constraints}))
+            // validate({[inputId]: inputValue}, {[inputId]: {presence: {allowEmpty: false}}})
+           
         }else if(inputId === "email"){
 
         }
         else if(inputId === "password"){
-            
+             
         }
 
     }
