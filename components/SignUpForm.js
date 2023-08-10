@@ -1,29 +1,16 @@
 import react from "react";
 import Input from "../components/Input";
 import SubmitButton from "./SubmitButton";
-import { validate } from "validate.js";
+import { validateString } from "../utils/ValidationConstraints";
 
 const SigneUpForm = (props) =>{
 
     const inputChangeHandler = (inputId, inputValue) =>{
 
         if(inputId === "firstName" || inputId === "lastName"){
-
-            const constraints = {
-                presence: {allowEmpty: false},
-            }
-            if(inputValue !==""){
-                constraints.format = {
-                    pattern: '[a-z]+',
-                    flags: 'i',
-                    message : 'ce champs ne peut contenir que des lettres'
-                }
-            }
-
-           console.log (validate({[inputId]: inputValue}, {[inputId]: constraints}))
-            // validate({[inputId]: inputValue}, {[inputId]: {presence: {allowEmpty: false}}})
-           
-        }else if(inputId === "email"){
+           console.log(validateString(inputId, inputValue))
+        }
+        else if(inputId === "email"){
 
         }
         else if(inputId === "password"){
