@@ -12,5 +12,10 @@ export const validateString = (id, value)=>{
             message : 'ce champs ne peut contenir que des lettres'
         }
     }
+
+    const validationResult = validate({[id]: value}, {[id]: constraints})
+    return validationResult && validationResult[id];
     return validate({[id]: value}, {[id]: constraints})
+
+    
 }
